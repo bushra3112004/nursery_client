@@ -1,8 +1,9 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Home from './views/Home/Home';
+import AddPlant from './views/AddPlant/AddPlant'
+import UpdatePlant from './views/UpdatePlant/UpdatePlant';
 
 
 
@@ -14,9 +15,17 @@ const router = createBrowserRouter([
     element:<Home/>
   },
   {
+    path: "/add",
+    element: <AddPlant/>
+  },
+  {
+    path:"/update",
+    element:<UpdatePlant/>
+  },
+  {
     path: "*",
-    element: < page not found />
-  }
+   element: < h1>page not found</h1>
+ }
 ])
 root.render((<div>
   <RouterProvider router={router}/>
